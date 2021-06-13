@@ -18,10 +18,8 @@
             <button> Play/Pause </button>
         </main>
         <script>
-            //El querySelector usa los selectores de CSS
-            const video = document.querySelector('video');
-            const btn = document.querySelector('button');
-            class MediPlayer{
+
+            class MediaPlayer{
                 constructor(config){
                     this.media = config.element;
                 }
@@ -42,7 +40,12 @@
                     }
                 }
             }
-            btn.onclick=()=>video.play();
+            //El querySelector usa los selectores de CSS
+            const video = document.querySelector('video');
+            console.log(video.currentSrc);
+            const btn = document.querySelector('button');
+            const player = new MediaPlayer({element: video})
+            btn.onclick=()=>player.togglePlayer();
         </script>
     </body>
 </html>
