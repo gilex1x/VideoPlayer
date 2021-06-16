@@ -15,37 +15,9 @@
         <main class="container">
             <video class="movie"  src="./assets/video.mp4" type="video/mp4">
             </video>
-            <button> Play/Pause </button>
+            <button class="buttonPlay"> Play/Pause </button>
+            <button class="buttonMute"> Mute/Unmute </button>
         </main>
-        <script>
-
-            class MediaPlayer{
-                constructor(config){
-                    this.media = config.element;
-                }
-
-                play(){
-                    this.media.play();
-                }
-
-                pause(){
-                    this.media.pause();
-                }
-
-                togglePlayer(){
-                    if(this.media.paused){
-                        this.play();
-                    }else{
-                        this.pause();
-                    }
-                }
-            }
-            //El querySelector usa los selectores de CSS
-            const video = document.querySelector('video');
-            console.log(video.currentSrc);
-            const btn = document.querySelector('button');
-            const player = new MediaPlayer({element: video})
-            btn.onclick=()=>player.togglePlayer();
-        </script>
+        <script type="module" src="./assets/scripts/index.js"></script>
     </body>
 </html>
